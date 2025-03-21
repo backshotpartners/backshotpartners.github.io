@@ -45,6 +45,7 @@
 <body>
     <div class="container">
         <h2>Enter the Password</h2>
+        <label for="password">Password:</label>
         <input type="password" id="password" placeholder="Password">
         <br>
         <button onclick="checkPassword()">Enter</button>
@@ -52,7 +53,7 @@
 
     <script>
         function checkPassword() {
-            var input = document.getElementById("password").value;
+            var input = document.getElementById("password").value.trim().toLowerCase();
             if (input === "i love anwesha") {
                 window.location.href = "home.html"; // Redirect to the main page
             } else {
