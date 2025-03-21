@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            background-color: #ffd6e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: #fff0f6;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #ff1493;
+        }
+        input[type="password"] {
+            padding: 8px;
+            border: 1px solid #ff1493;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff1493;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter the Password</h2>
+        <input type="password" id="password" placeholder="Password">
+        <br>
+        <button onclick="checkPassword()">Enter</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var input = document.getElementById("password").value;
+            if (input === "i love anwesha") {
+                window.location.href = "home.html"; // Redirect to the main page
+            } else {
+                alert("Wrong password! Try again.");
+            }
+        }
+    </script>
+</body>
+</html>
