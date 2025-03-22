@@ -1,0 +1,130 @@
+<!-- mad-at-me.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Mad at You 💖</title>
+    <style>
+        body {
+            background-color: #ffe4ec;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff1493;
+            margin: 0;
+            padding: 0;
+        }
+        .title {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ff1493;
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .message {
+            font-size: 1.5em;
+            color: #ff69b4;
+            margin: 20px;
+            background-color: #fff0f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: 10px auto;
+        }
+        .timer {
+            font-size: 1.8em;
+            color: #ff1493;
+            margin-top: 40px;
+        }
+        footer {
+            font-size: 1.2em;
+            color: #ff1493;
+            margin-top: 50px;
+            font-style: italic;
+        }
+        a {
+            display: block;
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #ff1493;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #ff69b4;
+        }
+        .heart {
+            color: #ff1493;
+            font-size: 2em;
+        }
+        .forgiveness-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.3em;
+            margin-top: 30px;
+        }
+        .forgiveness-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff0f5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="title">I'm Mad at You 💖</h1>
+
+    <div class="message">
+        <p>Hey, I know I'm mad at you right now, but just know that I still care about you more than anything.</p>
+        <p>Whatever happens, the LOVE doesnt fade, remember?💞</p>
+        <p>Let’s talk things through. I can't stay mad at you forever. 😘</p>
+    </div>
+
+    <div class="message">
+        <p><strong>Here's what you can do to earn my forgiveness:</strong></p>
+        <ul class="forgiveness-list">
+            <li>Give me a sincere apology 💌</li>
+            <li>Send me a cute picture of you, my sungurr.</li>
+            <li>Write me a thoughtful message telling me why I mean so much to you 📖</li>
+            <li>Get me FLOWERS.</li>
+            <li>Just call me. 🎧 (9802310107 or 9841341931 if blocked)</li>
+            <li>Promise to never make me mad again (at least for a week 😉) 💖</li>
+        </ul>
+    </div>
+
+    <div class="timer">
+        <p>Can't stay mad for longer than this:</p>
+        <p id="countdown"></p>
+    </div>
+
+    <footer>
+        <p>Made with <span class="heart">❤</span> Just for Yash</p>
+    </footer>
+
+    <a href="home.html">Back to Home</a>
+
+    <script>
+        // Countdown Timer
+        var countdownDate = new Date().getTime() + 10 * 60 * 1000; // 10 minutes from now
+
+        var countdownFunction = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countdownDate - now;
+
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Time's up! 😘";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
