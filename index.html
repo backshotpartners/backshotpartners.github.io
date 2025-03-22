@@ -53,9 +53,11 @@
 
     <script>
         function checkPassword() {
-            var input = document.getElementById("password").value.trim().toLowerCase();
-            if (input === "i love anwesha") {
-                window.location.href = "home.html"; // Redirect to the main page
+            var input = document.getElementById("password").value.trim();
+            var encodedPassword = "aSBsb3ZlIGFud2VzaGE="; // Base64 encoded "i love anwesha"
+
+            if (btoa(input) === encodedPassword) {
+                window.location.href = "home.html";
             } else {
                 alert("Wrong password! Try again.");
             }
