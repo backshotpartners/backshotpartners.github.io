@@ -6,7 +6,7 @@
   <title>Our Memoir</title>
   <style>
     body {
-      background-color: #ffd6e0; /* Pinkish, cute background */
+      background-color: #ffd6e0; /* Cute pink background */
       font-family: 'Arial', sans-serif;
       text-align: center;
       padding: 20px;
@@ -15,8 +15,6 @@
       font-size: 32px;
       font-weight: bold;
       color: #ff4d79;
-      background: url('https://i.imgur.com/NpA9pC2.png'); /* Nostalgic scroll background image */
-      background-size: cover;
       padding: 20px;
       border-radius: 20px;
       display: inline-block;
@@ -36,6 +34,10 @@
     img {
       width: 100%;
       border-radius: 10px;
+    }
+    /* Increased size for .png images */
+    img[src$=".png"] {
+      width: 110%; /* Make .png images larger */
     }
     .caption {
       font-size: 18px;
@@ -90,276 +92,280 @@
       <img src="start.png" alt="Memory 1">
       <div class="caption">The start of it all</div>
       <div class="date">18th September, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(1)">🔒 Tap to reveal</button>
-      <div class="thoughts">Just do you know, I wasn't actually scared of you. I always found you attractive so halka intimidated?</div>
+      <button class="thoughts-button" onclick="toggleThoughts(0)">🔒 Tap to reveal</button>
+      <div class="thoughts">Just so you know, I wasn't actually scared of you. I always found you attractive so halka intimidated?</div>
     </div>
     <!-- Slide 2 -->
     <div class="slides">
       <img src="freak.jpg" alt="Memory 2">
       <div class="caption">MATCHING FREAKS</div>
       <div class="date">21st September, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(2)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(1)">🔒 Tap to reveal</button>
       <div class="thoughts">Me chatake+ You chatake= Chatake pro max. And why do you always say "hora??" thats soo..</div>
     </div>
-<!-- Slide 3 -->
+    <!-- Slide 3 -->
     <div class="slides">
       <img src="people need you.jpg" alt="Memory 3">
       <div class="caption">"Me trynna hit"</div>
       <div class="date">21st September, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(3)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(2)">🔒 Tap to reveal</button>
       <div class="thoughts">LOL, i was trying so hard to be flirty instead of freaky so you dont think I'm wierd. I was so cooked.</div>
     </div>
-    <!-- Slide 2 -->
+    <!-- Slide 4 -->
     <div class="slides">
       <img src="eyes.jpg" alt="Memory 4">
       <div class="caption">Burnt into ashes?</div>
       <div class="date">22nd September, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(4)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(3)">🔒 Tap to reveal</button>
       <div class="thoughts">Honestly, pure cringe. Idek ma kina impressed thiye. Thats so chapriiiii</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 5 -->
     <div class="slides">
       <img src="felling sad.jpg" alt="Memory 5">
       <div class="caption">Felling😭</div>
       <div class="date">24th September, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(5)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(4)">🔒 Tap to reveal</button>
       <div class="thoughts">I genuinely was so icked out at that moment, i was literally regretting life decisions. Felling re, kutta ta bhachena?😂</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 6 -->
     <div class="slides">
       <img src="khilwad.jpg" alt="Memory 6">
       <div class="caption">My attempt to push you away</div>
       <div class="date">24th September, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(6)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(5)">🔒 Tap to reveal</button>
       <div class="thoughts">I was trying to be as clingy and cringe as possible and you still stayed!!</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 7 -->
     <div class="slides">
       <img src="love.jpg" alt="Memory 7">
       <div class="caption">"Love hune bhanekai etikai ho"</div>
       <div class="date">25th September, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(7)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(6)">🔒 Tap to reveal</button>
       <div class="thoughts">Suspend bhayera ghar basda loveko guff diracha. OMG, my man!</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 8 -->
     <div class="slides">
       <img src="she girl.png" alt="Memory 8">
       <div class="caption">"RANDIBAAZ"</div>
       <div class="date">27th September, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(8)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(7)">🔒 Tap to reveal</button>
       <div class="thoughts">I saw that and was like "I should've known he was like this, bekarma time waste bho" but then, i cried my eyes out..</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 9 -->
     <div class="slides">
       <img src="blocked.png" alt="Memory 9">
       <div class="caption">"BLOCKED"</div>
       <div class="date">25th September, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(9)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(8)">🔒 Tap to reveal</button>
       <div class="thoughts">You blocked me, I blocked you. Plus, it was the day before the thuuloo flood in kavre k. so i was stuck at home and i wrote poems connecting us not speaking and the terrible flood. HARE SHIVA!</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 10 -->
     <div class="slides">
       <img src="comeback.jpg" alt="Memory 10">
       <div class="caption">"Guess who came back?"</div>
       <div class="date">26th October, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(10)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(9)">🔒 Tap to reveal</button>
       <div class="thoughts">you know, I thought you were a 10 ko dd and i was genuinely shocked and i was dumb enough to think you came back because you started actually liking me. Did you?</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 11 -->
     <div class="slides">
       <img src="effect.png" alt="Memory 11">
       <div class="caption">"I just cant help myself"</div>
       <div class="date">27th October, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(11)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(10)">🔒 Tap to reveal</button>
       <div class="thoughts">Yo sab padhera i got my hopes high for some reason. Was all of it true?</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 12 -->
     <div class="slides">
       <img src="gallery.png" alt="Memory 12">
       <div class="caption">"ohooo"</div>
       <div class="date">27th October, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(12)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(11)">🔒 Tap to reveal</button>
       <div class="thoughts">Ma ta makkhai thiye, OMG. You were always good at saying nice things baby.</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 13 -->
     <div class="slides">
       <img src="re k.png" alt="Memory 13">
       <div class="caption">"Re k hatyooooooo"</div>
       <div class="date">27th October, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(13)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(12)">🔒 Tap to reveal</button>
       <div class="thoughts">Your coward ass deleted that message after that ani i was like, i like HIM?,this guy, REALLY?</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 14 -->
     <div class="slides">
       <img src="change that.png" alt="Memory 14">
       <div class="caption">"I know i haven't changed that"</div>
       <div class="date">27th October, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(14)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(13)">🔒 Tap to reveal</button>
       <div class="thoughts">I know i haven't changed that because you've genuinely like one person but you LOVE me. YAY!</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 15 -->
     <div class="slides">
       <img src="need ur pic.png" alt="Memory 15">
       <div class="caption">"Why? To jerk off?"</div>
       <div class="date">27th October, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(15)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(14)">🔒 Tap to reveal</button>
       <div class="thoughts">Why do i like the idea of people jerking off to me? Is there something seriously wrong with me?????? </div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 16 -->
     <div class="slides">
       <img src="halwa.jpg" alt="Memory 16">
       <div class="caption">"I KNOW EVERYTHING"</div>
       <div class="date">19th November, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(16)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(15)">🔒 Tap to reveal</button>
       <div class="thoughts">Tbh, i was so icked out. i was like"WHO THE HELL IS HE TO TELL HOW TO EAT?" cuz obv, you werent worthy of that then. Aile ta, you're my babyyyyyyyyy.</div>
     </div>
-<!-- Slide 2 -->
+<!-- Slide 17 -->
     <div class="slides">
       <img src="clear out.jpg" alt="Memory 17">
       <div class="caption">"When i actually started liking you"</div>
       <div class="date">23rd December, 2024</div>
-      <button class="thoughts-button" onclick="toggleThoughts(17)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(16)">🔒 Tap to reveal</button>
       <div class="thoughts">I loved this day personally cause a lotta things were communicated and i felt reassured tara obv i didnt fully trust you and i didn't like that you used the worh "image" so much. So, i was mad, DO I RUIN YOUR IMAGE? lol</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 18 -->
     <div class="slides">
       <img src="i love you.jpg" alt="Memory 18">
       <div class="caption">I LOVE YOU TOO</div>
       <div class="date">17th January, 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(18)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(17)">🔒 Tap to reveal</button>
       <div class="thoughts">I didnt think you deserved an i love you too at that point to be frank, so i was trying to avoid it. But, I was speechless.</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 19 -->
     <div class="slides">
       <img src="love test.jpg" alt="Memory 19">
       <div class="caption">CUTE</div>
       <div class="date">17th February , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(19)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(18)">🔒 Tap to reveal</button>
       <div class="thoughts">For me, this was so cute and reassuring. Tara we should be more adventurous k, "safe side" bhanda ni. Tara aba temple run bhanda badi k garne horaa.</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 20 -->
     <div class="slides">
       <img src="paragraph.jpg" alt="Memory 20">
       <div class="caption">Major slay</div>
       <div class="date">2nd March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(20)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(19)">🔒 Tap to reveal</button>
       <div class="thoughts">I love the paragraph so much i dont what to say and how to say it. All i can say is "I LOVE YOU,AATU BABY <3.</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 21 -->
     <div class="slides">
       <img src="backshots day.png" alt="Memory 21">
       <div class="caption">Happy Happy</div>
       <div class="date">2nd March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(21)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(20)">🔒 Tap to reveal</button>
       <div class="thoughts">This was the day our whole backshots thingy started. i always thought you liked me because I was innocent ani thats not what i am. So, i decided to tell you all this freaky shit, another one of my attempts to push you away and my baby still stayed!!</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 22 -->
     <div class="slides">
       <img src="bhauju.jpg" alt="Memory 22">
       <div class="caption">SEXY</div>
       <div class="date">4th March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(22)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(21)">🔒 Tap to reveal</button>
       <div class="thoughts">Idk why tara i liked it. Cute. Tara obv you sent it to me cuz you were proud you said that and Im proud of you too. YAY!</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 23 -->
     <div class="slides">
       <img src="sexy.jpg" alt="Memory 23">
       <div class="caption">CUTIE</div>
       <div class="date">4th March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(23)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(22)">🔒 Tap to reveal</button>
       <div class="thoughts">Yo pani cute cha hai ngl. And have i ever told you? I'm so proud of you for quitting smoking (if you actually did).</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 24 -->
     <div class="slides">
       <img src="chat.png" alt="Memory 24">
       <div class="caption">Yay</div>
       <div class="date">12th March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(24)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(23)">🔒 Tap to reveal</button>
       <div class="thoughts">I love it, aru ta k bhannu. Woohoooo, aatu loves me!</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 25 -->
     <div class="slides">
       <img src="snap.jpg" alt="Memory 25">
       <div class="caption">Snap Era</div>
       <div class="date">13th March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(25)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(24)">🔒 Tap to reveal</button>
       <div class="thoughts">I was like, cutiele balla snap pathayoo, uff too cute!!</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 26 -->
     <div class="slides">
       <img src="girlfirend.jpg" alt="Memory 26">
       <div class="caption">Girlfirend</div>
       <div class="date">14th March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(26)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(25)">🔒 Tap to reveal</button>
       <div class="thoughts">Just tell me how you did it cuz Bing le "GIRLFIREND" ta sure dekhayana.</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 27 -->
     <div class="slides">
       <img src="paint.png" alt="Memory 27">
       <div class="caption">Pagalpanti</div>
       <div class="date">16th March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(27)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(26)">🔒 Tap to reveal</button>
       <div class="thoughts"> This was honestly so fun and you were enjoying it too, timle j bhaneni.</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 28 -->
     <div class="slides">
       <img src="heart emoji.png" alt="Memory 28">
       <div class="caption">HEART EMOJI</div>
       <div class="date">16th March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(28)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(27)">🔒 Tap to reveal</button>
       <div class="thoughts">Yash not only speaks, but also does my vocab? Wow. Heart emoji has become a whole thing k, easy way to say I love you.</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 29 -->
     <div class="slides">
       <img src="sungur.png" alt="Memory 29">
       <div class="caption">My sungur</div>
       <div class="date">16th March , 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(29)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(28)">🔒 Tap to reveal</button>
       <div class="thoughts">Hera na, ditto sungur, tara cute and mine!</div>
     </div>
-<!-- Slide 35 -->
+<!-- Slide 30 -->
     <div class="slides">
       <img src="fav.png" alt="Memory 30">
       <div class="caption">MERO KUCHUPUCHU</div>
       <div class="date">Dherai agadi cuz you're old</div>
-      <button class="thoughts-button" onclick="toggleThoughts(30)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(29)">🔒 Tap to reveal</button>
       <div class="thoughts">This is one of my fav photos of you because there is a sense of reality in it. Kasto "caught" moment tara kasto cute moment pani.</div>
     </div>
-    <!-- Slide 35 -->
+    <!-- Slide 31 -->
     <div class="slides">
       <img src="BACKSHOTS.png" alt="Memory 31">
       <div class="caption">Wallpaper?</div>
       <div class="date">22nd March, 2025</div>
-      <button class="thoughts-button" onclick="toggleThoughts(31)">🔒 Tap to reveal</button>
+      <button class="thoughts-button" onclick="toggleThoughts(30)">🔒 Tap to reveal</button>
       <div class="thoughts">Bonus one. I tried it make it a wallpaper tara it looks unfinished so i kinda stopped, but cute hai?</div>
     </div>
     <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
     <button class="next" onclick="changeSlide(1)">&#10095;</button>
   </div>
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+  </div>
+
   <script>
     let slideIndex = 0;
     showSlides(slideIndex);
 
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
     function showSlides(n) {
       let slides = document.getElementsByClassName("slides");
-      if (n >= slides.length) slideIndex = 0;
-      if (n < 0) slideIndex = slides.length - 1;
+      if (n >= slides.length) { slideIndex = 0; }
+      if (n < 0) { slideIndex = slides.length - 1; }
       for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
       slides[slideIndex].style.display = "block";
     }
 
-    function changeSlide(n) {
-      showSlides(slideIndex += n);
-    }
-
     function toggleThoughts(index) {
-      let thoughts = document.getElementsByClassName("thoughts");
-      if (thoughts[index].style.display === "none" || thoughts[index].style.display === "") {
-        thoughts[index].style.display = "block";
+      let thoughts = document.getElementsByClassName("thoughts")[index];
+      if (thoughts.style.display === "none" || thoughts.style.display === "") {
+        thoughts.style.display = "block";
       } else {
-        thoughts[index].style.display = "none";
+        thoughts.style.display = "none";
       }
     }
   </script>
