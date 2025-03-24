@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Aatu ❤️</title>
     <style>
-        body {
+       /* Heart Style */
+.heart {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    color: red;
+    animation: fall 5s infinite;
+}
+
+/* Animation for the falling hearts */
+@keyframes fall {
+    0% {
+        top: -50px;
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+ body {
             background-color: #FFC0CB;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -274,6 +297,25 @@ When life gets tough, just know you have me here, holding your hand and walking 
         }
         
         setInterval(createHeart, 300);
+// Function to create a falling heart
+function createFallingHeart() {
+    let heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.textContent = '❤️'; // You can change this to any other heart emoji or image
+
+    // Randomly place the heart across the page
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    document.body.appendChild(heart);
+
+    // Remove the heart after it finishes falling
+    setTimeout(() => {
+        heart.remove();
+    }, 5000); // Heart will be removed after 5 seconds (when the animation ends)
+}
+
+// Create hearts at intervals
+setInterval(createFallingHeart, 300); // Create a heart every 300 milliseconds
+
     </script>
 </body>
 </html>
