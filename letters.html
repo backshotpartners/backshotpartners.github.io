@@ -3,319 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Aatu ❤️</title>
+    <title>For Yash ❤️</title>
     <style>
-       /* Heart Style */
-.heart {
-    position: absolute;
-    top: -50px;
-    font-size: 24px;
-    color: red;
-    animation: fall 5s infinite;
-}
-
-/* Animation for the falling hearts */
-@keyframes fall {
-    0% {
-        top: -50px;
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        top: 100%;
-        opacity: 0;
-    }
-}
- body {
-            background-color: #FFC0CB;
-            font-family: Arial, sans-serif;
+        body {
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 50px;
+            background-color: #ffd9e6; /* Light Pink Background */
             overflow: hidden;
+            font-size: 18px;
         }
         .container {
-            max-width: 500px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
+            margin-top: 70px;
         }
-        .button-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
+        h1 {
+            font-size: 36px; /* Larger Header */
+            color: #ff2a92; /* Bright Pink */
+            text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.7); /* Dramatic Shadow */
+            font-weight: bold;
         }
         .button {
-            width: 150px;
-            height: 150px;
+            background: url('smile.jpg') no-repeat center center/cover;
+            width: 200px; /* Bigger Button */
+            height: 200px; /* Bigger Button */
             border-radius: 50%;
-            background: url('smile.jpg') no-repeat center/cover;
-            border: 5px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            display: block;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 40px auto;
+            position: relative;
+            border: none;
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.5); /* Darker Shadow */
+            transform: scale(1);
+            transition: transform 0.2s ease-in-out;
         }
         .button:active {
             transform: scale(0.95);
-            box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
         }
         .caption {
-            margin-top: 10px;
-            font-size: 18px;
+            font-size: 24px; /* Larger Caption */
+            margin-top: 20px;
+            color: #ff4d88; /* Slightly Darker Pink */
             font-weight: bold;
         }
-        .letter {
+        #letter-container {
             display: none;
-            font-size: 16px;
-            margin-top: 20px;
-            background: #fff0f5;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            font-size: 22px; /* Larger Text */
+            background: white;
+            padding: 40px; /* More Padding */
+            border-radius: 20px; /* More Rounded Corners */
+            margin: 30px auto;
+            width: 85%; /* Wider Container */
+            max-width: 600px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger Shadow */
+            font-weight: bold;
         }
-        .emoji {
-            font-size: 20px;
+        .heart, .falling-heart {
+            position: fixed;
+            color: red;
+            font-size: 48px; /* Larger Hearts */
         }
         .heart {
-            position: absolute;
-            color: red;
-            font-size: 20px;
-            animation: fall linear infinite;
+            animation: floatUp 2s ease-out;
+        }
+        @keyframes floatUp {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-100px); }
+        }
+        .falling-heart {
+            animation: fall 5s linear infinite;
         }
         @keyframes fall {
-            from { transform: translateY(-10vh) scale(1); opacity: 1; }
-            to { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .countdown {
+            font-size: 24px; /* Larger Countdown */
+            margin-top: 20px;
+            color: #ff007f; /* Darker Pink */
+            font-weight: bold;
+        }
+        .kiss-counter {
+            font-size: 26px; /* Larger Kiss Counter */
+            margin-top: 20px;
+            color: #ff1493; /* Bright Pink */
+            font-weight: bold;
+        }
+        .loading-animation {
+            font-size: 30px; /* Larger Loading Text */
+            color: #ff3333; /* Red Loading Text */
+            display: none;
+            margin-top: 15px;
+        }
+        .peeking-cat {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px; /* Bigger Cat */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>For My Love ❤️</h1>
-        <div class="button-container">
-            <button class="button" id="loveButton"></button>
-        </div>
-        <p class="caption">Bang this button(me) to get a cute note from me! 😘💌</p>
-        <div class="letter" id="letterBox"></div>
+        <h1>For my boobae 💖</h1>
+        <button class="button" id="love-button"></button>
+        <div class="caption">Bang this button(me) to get a cute letter from me.💖</div>
+        <div id="letter-container"></div>
+        <div class="loading-animation" id="loading">❤️ Loading... ❤️</div>
+        <div class="countdown" id="countdown"></div>
+        <div class="kiss-counter" id="kiss-counter">Kisses Collected: 0 💋</div>
     </div>
-    
+    <img src="cat.png" alt="Peeking Cat" class="peeking-cat">
     <script>
         const letters = [
-            "Hey my love 😍, I know Im not always the best girlfriend but I try and love that you appreciate it. I try to observe and analyze things you do so that I can be there for you, so that I am the only one who knows how to handle you at your best and your worst. You have to know that I'm always trying and I'll understand you better over time, you will understand me better over time and I just know we are THE ones for each other. And if we are not destined to be together, I just know you will always remember me cuz I dont think Im that easible forgettable, am I?💖",
-            "Yashhh 💕, baby, YOU ARE MINE and MINE ONLY. You aren't going nowhere away from me baby, if you do I'm gonna kill you and marry your corpse. It will decay in the fridge till the day i die but at least we'll be dead together. But seriously, I know everyone thinks this about themsleves and their boyfriend but we are DIFFERENT. We both have the determination to make this work and finally get married. I just can't wait for the day when we get married and invite all these hoes that say this is "silly" and a waste of "time". Can't wait for when we are both successful and happily in love. Its gonna be such a kick in their asses, hai?😘",
-            "My pretty boy 🥰, you make my world so much brighter! I'm always looking for you wherever I go and whenevr you are near I get the feeling that I'm flying (not even kidding) because I know whatever I do you will always love me and whatever you do, I will always love you (except some things obv). But i really see how appreciative you are and I love that about you, baby.✨",
-            "Hiii baby 😘,
-
-First of all, I just wanna say… why are you so cute? Like actually. It’s unfair. You’re out here looking all good, smelling all nice, making me blush like crazy, and what do I get in return? Emotional damage because I can’t kiss you cuz I'm unsure. 😩💔
-
-You know, I never thought someone could make me feel this safe while also making me feel like a whole damn villain. One minute, I wanna snuggle into your arms and fall asleep on your chest, and the next, I wanna bully you just to see you pout. 🥺😂 The duality of love, I guess.
-
-But in all seriousness, you make my heart so full, Yash. You make me feel beautiful, wanted, and so deeply loved. Every call, every late-night convo, every little thing you do for me—it all reminds me that I’m the luckiest girl in the world to have you. 💗
-
-So, be ready to be stuck with me forever, because I ain’t letting you go. You’re mine, understood? 😏💖
-
-Love you endlessly,
-Your Ride-Or-Die (literally and metaphorically 😉)",
-            "Baby,
-
-I swear I could write pages and pages about how much I love you and it still wouldn’t be enough. 😩💖 You are the most special person in my life, and every day with you feels like a dream. I don’t care how many times you tell me you love me—I will NEVER get tired of hearing it. Keep saying it. Keep making my heart do backflips. Because you? You are my favorite thing in this whole damn world.🔥"
-      "Yashhhh 😘,
-
-If someone had told me a while ago that I’d be this deeply, madly, stupidly in love with a boy who calls me Backshots Baby 💀, I would’ve laughed in their face. But here we are, and guess what? I wouldn’t change a single thing.
-
-You are everything to me. And I mean it. Every time I see you, I just wanna hold your face and tell you how much I adore you. I love your pretty little eyes (that better only look at me 😌), your stupidly attractive voice, and the way you’re so effortlessly hot without even trying. It’s unfair. I demand compensation. 🫡💖
-
-I know life won’t always be perfect, but I swear to you, as long as we have each other, we can handle anything. You and me against the world, baby. 😘
-
-Now, be a good boy and say “I love you” again. I wanna hear it. 😏💖
-
-Forever and ever,
-Your Soon-To-Be Wifey (hehe, just saying 😘)"
-
-  "Babes, You’re mine, you know that, right? Like, completely, utterly, 100% mine. I don’t care what anyone else says—you belong to me. I’ve claimed you. So don’t even think about looking at anyone else. Actually, go ahead and try. I dare you. Just know that I will be reminding you exactly who you belong to. 😏💖
-But, of course, I’ll be nice. I’ll let you look at someone else just once—only if it’s in the mirror, admiring how good you look as my pretty boy. 😘"
-    "You are SO unfair. Like actually, I need to file a complaint. How am I supposed to focus on anything when you exist? 🤨 Every time I try to do something productive, my brain just goes, "But what is Yash doing? Does he miss me? Is he thinking about me? Does he know how much I wanna kiss his stupidly pretty face right now??" 😩
-
-You make my brain malfunction, Yash. And you know what? I love it. I love that you’re my biggest distraction. I love that you take up all my thoughts. I love that every time I hear your voice, I forget about everything else.
-
-So congratulations, baby. You win. You have officially taken over my mind, my heart, and my entire soul. I hope you're happy with yourself. 🙄💖
-
-Now, do me a favor and call me. I need to hear the voice of the person who ruined me. 😏😘
-
-Backshots Baby 😌💋"
-"Hey handsome,
-
-Can I just say… WOW. You? In my life? Absolute win. Like, I really bagged the prettiest boy ever, huh? And not just any pretty boy—my pretty boy. 😏💖
-
-I love the way you look at me like I’m your whole world. I love the way you say my name, like it belongs only to you. I love the way you whisper the cutest things when you think I’m not paying attention (I always am, by the way). 😌"
-"Hey future husband 😌💍,
-
-What do you think about forever? Because personally, I think it sounds really, really good when it’s with you. 😏💖
-
-You, me, together—always. That’s the plan, and there’s no escape. Sorry, baby, but you’re stuck with me. You better start preparing for a lifetime of me annoying you, teasing you, stealing your hoodies, and taking up way too much space in your bed. 😌💋
-
-But don’t worry, I’ll make it worth it. I’ll give you all my love, all my kisses, and all the forehead smooches your pretty little face can handle. I’ll be your best friend, your biggest cheerleader, and the one who loves you the hardest—every single day.
-
-So, are you ready? Ready to be mine forever? 😏😘"
-"Baby,
-
-I need a refund. Because I signed up for a boyfriend, but what I got was a full-time obsession. 😩 Like, how am I supposed to focus on anything when you exist?? You expect me to live a normal life when my man looks that good, talks that smooth, and loves me that much? Impossible.Now take responsibility and come give me some attention. 😏💖"
-"Listen up, pretty boy,
-
-I hope you realize you can’t leave me. Ever. No, seriously. I’ve already planned our future, imagined our house, decided what our kids are gonna call you, and figured out what kind of old man you’re going to be. 😌🔥 You’re stuck.
-
-And don’t even think about running, because 1) you don’t want to, and 2) even if you did, I’d find you. 😏💖 You think I won’t track you down? Baby, I’d be at your doorstep in 0.2 seconds, ready to remind you exactly why you fell in love with me in the first place.        -Your lifetime problem,
-Backshots Baby 😏🔥"
-"Yash,
-
-Did you really think you had a choice? That you had any control over this relationship? Baby, no. I picked you. I chose you. I decided that you were mine. And now? You’re trapped. 😏🔥
-
-You could try to escape, but where would you go? I’d find you. You could try to resist, but how long would that last? We both know you can’t stay away from me. You need me just as much as I need you. And that’s what makes this fun. 😌💖Ugh. You’re so lucky you’re mine. Otherwise, I’d have to fight every other girl who looks at you. And trust me, baby—I’d win. 😉💖"
-"Hey love,
-
-I hope you understand that no matter where you go, no matter who you meet, no one will ever come close to me. 😏💋
-
-No one will get inside your head the way I do.
-No one will make you weak the way I do.
-No one will ruin you the way I do.
-
-And the best part? You don’t want anyone else. I know you don’t. You’re obsessed with me. And I love it. But don’t get it twisted, baby—I’m just as madly, desperately, helplessly obsessed with you. 😩🔥.       -Your baby"
-"Yashhh,
-
-Sometimes I think about what life was like before you and I met, and honestly? It’s kind of funny. Like, how was I out here existing without you? How was I just going through life, not knowing that my stupidly perfect, annoyingly good-looking, clingy, chaotic, wonderful boy was out there?
-
-Because now? Now I can’t even go a day without thinking about you at least 200 times. 😩💖
-
-And it’s not just me. You’re just as much of a mess for me. Cuz you’re out here calling me every second you get, getting jealous over the smallest things, memorizing my entire existence like it’s your job—baby, admit it. You’re so cooked for me. 😏💋
-
-And honestly? Same. We’re a mess. But at least we’re a mess together. 😉💖"
-"Hey love,
-
-I know I tease you a lot. I know I push you, mess with you, make you suffer just for fun. But when you’re really tired, when you’ve had a long day, when you just want to be held—baby, you know I’ve got you. 😌💖
-
-Come here. Let me run my hands through your hair. Let me hold you the way you hold me. Let me remind you that I am yours, and you are mine, and nothing else in the world matters.
-
-I don’t care if the world is loud, if life is messy, if things don’t always make sense. You and I make sense. And that’s all we need.
-
-So just be here with me, okay? That’s all I want. 😘💖        -Anweshuu"
-"Yash, my sweet little simp 💋,
-Do you ever sit and wonder how you got this lucky? Like, genuinely? Because I do. Every. Single. Day. I mean, I have this insanely hot, obsessed boyfriend who would do anything for me, and in return, I just exist, looking cute, and you’re already drooling. It’s honestly so easy being me. 😌💅
-
-But let’s be real, baby, you’ve ruined me. No man could ever live up to you, and that’s a problem. Because now, if you ever try to leave, I’ll have no choice but to haunt you. And I don’t mean in a cute "boo" kind of way—I mean in a "whispering in your ear at 3 AM, making sure you never know peace again" kind of way. 👻
-
-But that’s fine because you’re never leaving, right? Right, Yash?"
-"My very own personal fanboy,
-If love is a disease, then you’re in critical condition. And baby, I hate to break it to you, but there’s no cure. The only treatment is being ridiculously in love with me for the rest of your life. Tragic, right? 😌
-
-Honestly, I should start charging rent for how much I live in your head. Every time you think about me, just send me money. Let’s see how long you last before you go broke. 💸😂
-
-But let’s be real—you wouldn’t want to stop thinking about me even if you could. And I wouldn’t want you to either. So keep being obsessed, my love. Keep being mine. And keep letting me drive you crazy. (I LOVE YOU TOO)"
-"Baby,
-You know what? You’ve turned me into something I never thought I’d be. I was all cool, calm, and collected before you—now? Well, now I’m a woman obsessed. 😘
-
-You’ve absolutely ruined me. I sit here, trying to do normal things, and all I can think about is you. How you smile, how you talk, how your hands feel when they’re around me. You’ve taken up real estate in my mind, and I’m not even mad about it. Actually, it’s your fault I can’t concentrate on anything else. So, lets fuck already!!(Not sachi hai feri)"
-"My dearest Yash,
-I swear, every time I think about you, my heart just melts. 🥺 You’ve become such a huge part of my day, and I honestly don't think I can go a single day without a thought of you crossing my mind. You’ve made me fall for you in ways I didn’t even know were possible.
-
-But it’s not just the way you look at me or the way you smile—it's everything. How you always check up on me, how you make me feel like I’m the most important person in your life. I could get lost in your eyes forever. 😍"
-"Hey handsome,
-You know, I don’t even need a special reason to miss you. I miss you even when you’re just a room away. It’s crazy how much I crave your presence, your voice, your smile. You’ve really got me wrapped around your finger, haven’t you? 😏
-
-But honestly, I wouldn’t want it any other way. You make me feel seen, heard, and loved. And I can’t tell you how much that means to me. Every time I think about you, I can’t help but smile. You have that effect on me, you know?
-
-Just thinking about the next time I get to hold your hand and look into those gorgeous eyes. I’m counting the days, baby. 💖"
-"Yashhh,
-Okay, so I’ve been thinking… if being cute was a crime, we’d both be in jail by now. 😂 I mean, have you seen us together? We’re basically a walking, talking, hottie duo. But seriously, you’re like my personal sunshine, always brightening my day.Let’s keep being this cute, okay? Or else I’ll be forced to take more pictures of you and start a “Yash fan club” where everyone can appreciate how amazing you are. 😘"
-"Aatu, So I was thinking... are we secretly just a bunch of flirty fools who can’t get enough of each other? 😜 Because I’m definitely starting to think we might be. Every time you look at me, I’m pretty sure my heart does a backflip. How do you do that? You’ve got me hooked, and honestly, I’m not mad about it.💖"
-"HIIIIIIIIIII, Honestly, you’re a walking distraction, and I am 100% here for it. Every time I catch a glimpse of you, I get this goofy smile that I can't get rid of. It’s your fault, you know? You just make everything better without even trying. 😘
-
-Can’t wait to steal you away again and make you feel just as special as you make me feel. 💖
-
-Your girl who’s totally obsessed,
-And proud of it 😜"
-"Yashhh,
-I was just thinking about you (as always, haha), and I realized something—every time I’m with you, all I can think about is how bad I want to hit you with a backshot that’ll leave you begging for more. 😏 I’m not even sorry. I know you love it when I’m in my freaky mood. 😜
-
-But seriously, babe, there’s just something about the way you look at me that makes me want to pull you closer and make you remember who’s in charge. And believe me, I’m not just talking about the backshots. 😘"
-"Baby, You have this strength about you that I admire so much. Sometimes, I know life gets tough, and you don’t always say what’s on your mind, but please know I’m here for you, no matter what. You can talk to me about anything, and I’ll always listen. 💕
-
-I feel so lucky to be in your life, and I can’t wait to see everything amazing that you’re going to do. You deserve all the happiness, Yash. All of it. I believe in you so much.
-
-Always yours,
-Your biggest fan 💖"
-"Aatu baby, I love the way you care about the people around you, the way you always try to be better for yourself, and how you never give up, even when things are tough. I know you don’t always show it, but I see how much you’re trying, and that makes me love you even more.
-
-Please remember that no matter what happens, I’ll always be here for you. When you need someone to talk to, or just someone to sit with, I’m your girl. You don’t have to go through anything alone, okay?"
-"Baby, There’s something about you that makes me feel safe, loved, and like I can conquer anything with you by my side.
-
-You don’t have to be perfect, Yash. In fact, it’s your little flaws and the way you grow from them that makes you even more beautiful in my eyes. You don’t need to have it all figured out, and you don’t have to pretend to be someone else. The person you are right now is more than enough, and I love you for it.
-
-When life gets tough, just know you have me here, holding your hand and walking through it with you. I’m not going anywhere. You’ve got me."
-];
-
-        const button = document.getElementById("loveButton");
-        const letterBox = document.getElementById("letterBox");
-
+            "You're my favorite person in the entire world. ❤️",
+            ...Array(364).fill("I love you endlessly, Yash. ❤️")
+        ];
+        
         function getRandomLetter() {
             return letters[Math.floor(Math.random() * letters.length)];
         }
-
-        function canPressButton() {
-            const lastPress = localStorage.getItem("lastPress");
-            if (!lastPress) return true;
-            const now = new Date().getTime();
-            return now - lastPress >= 86400000; // 24 hours in milliseconds
+        
+        function showHearts(x, y) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 2000);
         }
-
-        function handleClick() {
-            if (!canPressButton()) {
-                alert("You can only press this button once every 24 hours! 💕");
+        
+        function createFallingHearts() {
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.classList.add('falling-heart');
+                heart.innerHTML = '❤️';
+                heart.style.left = `${Math.random() * window.innerWidth}px`;
+                heart.style.top = '-20px';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 5000);
+            }, 500);
+        }
+        
+        function updateCountdown() {
+            const lastClicked = localStorage.getItem('lastClicked');
+            if (!lastClicked) return;
+            const now = new Date().getTime();
+            const diff = 86400000 - (now - lastClicked);
+            if (diff > 0) {
+                const hours = Math.floor(diff / 3600000);
+                const minutes = Math.floor((diff % 3600000) / 60000);
+                const seconds = Math.floor((diff % 60000) / 1000);
+                document.getElementById('countdown').innerText = `Next letter in: ${hours}h ${minutes}m ${seconds}s`;
+                setTimeout(updateCountdown, 1000);
+            } else {
+                document.getElementById('countdown').innerText = "You can press the button now!";
+            }
+        }
+        
+        let kisses = parseInt(localStorage.getItem('kisses') || 0);
+        document.getElementById('kiss-counter').innerText = `Kisses Collected: ${kisses} 💋`;
+        
+        document.getElementById('love-button').addEventListener('click', function(event) {
+            const lastClicked = localStorage.getItem('lastClicked');
+            const now = new Date().getTime();
+            if (lastClicked && now - lastClicked < 86400000) {
+                alert("You can only press this button once every 24 hours! Be patient, my love ❤️");
                 return;
             }
-            localStorage.setItem("lastPress", new Date().getTime());
-            letterBox.innerHTML = `<p class='emoji'>💌</p> ${getRandomLetter()} <p class='emoji'>💖</p>`;
-            letterBox.style.display = "block";
-        }
-
-        button.addEventListener("click", handleClick);
+            localStorage.setItem('lastClicked', now);
+            
+            document.getElementById('loading').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('letter-container').innerText = getRandomLetter();
+                document.getElementById('letter-container').style.display = 'block';
+                kisses++;
+                localStorage.setItem('kisses', kisses);
+                document.getElementById('kiss-counter').innerText = `Kisses Collected: ${kisses} 💋`;
+            }, 2000);
+        });
         
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "❤️";
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }
-        
-        setInterval(createHeart, 300);
-// Function to create a falling heart
-function createFallingHeart() {
-    let heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.textContent = '❤️'; // You can change this to any other heart emoji or image
-
-    // Randomly place the heart across the page
-    heart.style.left = Math.random() * window.innerWidth + 'px';
-    document.body.appendChild(heart);
-
-    // Remove the heart after it finishes falling
-    setTimeout(() => {
-        heart.remove();
-    }, 5000); // Heart will be removed after 5 seconds (when the animation ends)
-}
-
-// Create hearts at intervals
-setInterval(createFallingHeart, 300); // Create a heart every 300 milliseconds
-
+        updateCountdown();
+        createFallingHearts();
     </script>
 </body>
 </html>
