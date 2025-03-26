@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAY!❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            text-align: center;
+            padding: 20px;
+            color: #d63384;
+            overflow-y: auto;
+            height: auto;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff4081;
+            margin-bottom: 30px;
+        }
+
+        .streak-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            transition: transform 0.2s;
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 40px;
+        }
+
+        .streak-card:hover {
+            transform: scale(1.05);
+        }
+
+        .streak-title {
+            font-size: 24px;
+            color: #ff69b4;
+            margin-bottom: 10px;
+        }
+
+        .streak-description {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            margin-top: 10px;
+            height: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #ff4081;
+            border-radius: 20px;
+        }
+
+        .prize {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #ff69b4;
+        }
+
+        .confirm-btn {
+            background-color: #ff4081;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .confirm-btn:hover {
+            background-color: #e91e63;
+        }
+
+        .emoji {
+            font-size: 30px;
+            margin-top: 10px;
+        }
+
+        .falling-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: fall 3s infinite;
+            opacity: 0;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        .leaderboard {
+            margin-top: 40px;
+        }
+
+        .leaderboard ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .leaderboard li {
+            font-size: 20px;
+            background-color: #fff;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .leaderboard li:nth-child(odd) {
+            background-color: #ffe4e1;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>EARN ME, BABY! 💖</h1>
+
+    <!-- Falling Hearts Animation -->
+    <div class="falling-hearts">
+        <div class="heart" style="left: 10%; animation-duration: 3s; animation-delay: 0s;">❤️</div>
+        <div class="heart" style="left: 30%; animation-duration: 4s; animation-delay: 1s;">❤️</div>
+        <div class="heart" style="left: 50%; animation-duration: 5s; animation-delay: 2s;">❤️</div>
+        <div class="heart" style="left: 70%; animation-duration: 3s; animation-delay: 1.5s;">❤️</div>
+        <div class="heart" style="left: 90%; animation-duration: 4s; animation-delay: 0.5s;">❤️</div>
+    </div>
+
+    <!-- Streak Cards -->
+    <div class="streak-card" id="compliment-card">
+        <div class="streak-title">Compliment Da Queen (7 Days) 👑</div>
+        <div class="streak-description">If you compliment me consistently for a week, you win a kissy on the cheek 💋</div>
+        <div class="progress-bar">
+            <div class="progress" id="compliment-progress" style="width: 0%;"></div>
+        </div>
+        <div class="prize">Prize: Kissy on the cheek 💋</div>
+        <button class="confirm-btn" id="compliment-btn">Confirm Daily Completion</button>
+        <div id="compliment-status">Waiting for Anwesha... ⏳</div>
+    </div>
+
+    <div class="streak-card" id="call-card">
+        <div class="streak-title">CALL CALL CALL (12 Days) 📞</div>
+        <div class="streak-description">If we can call consistently for 12 days for at least 15 mins, you win a 2-minute huggy 🤗</div>
+        <div class="progress-bar">
+            <div class="progress" id="call-progress" style="width: 0%;"></div>
+        </div>
+        <div class="prize">Prize: 2-Minute Hug 🤗</div>
+        <button class="confirm-btn" id="call-btn">Confirm Daily Completion</button>
+        <div id="call-status">Waiting for Anwesha... ⏳</div>
+    </div>
+
+    <div class="streak-card" id="video-card">
+        <div class="streak-title">On Dat Vid (3 Days) 🎥</div>
+        <div class="streak-description">If you keep your video on in call for 3 days, you get 3 cute love letters 💌</div>
+        <div class="progress-bar">
+            <div class="progress" id="video-progress" style="width: 0%;"></div>
+        </div>
+        <div class="prize">Prize: 3 Love Letters 💌</div>
+        <button class="confirm-btn" id="video-btn">Confirm Daily Completion</button>
+        <div id="video-status">Waiting for Anwesha... ⏳</div>
+    </div>
+
+    <div class="streak-card" id="communication-card">
+        <div class="streak-title">Communication Champion (22 Days) 🗣️</div>
+        <div class="streak-description">If we don't argue for 22 days, we get to kiss 😘</div>
+        <div class="progress-bar">
+            <div class="progress" id="communication-progress" style="width: 0%;"></div>
+        </div>
+        <div class="prize">Prize: Kissy on the Lips 💋</div>
+        <button class="confirm-btn" id="communication-btn">Confirm Daily Completion</button>
+        <div id="communication-status">Waiting for Anwesha... ⏳</div>
+    </div>
+
+    <!-- Leaderboard Section (Hidden initially, will be shown when streaks are completed) -->
+    <div class="leaderboard" id="leaderboard" style="display: none;">
+        <h2>Leaderboard 🏆</h2>
+        <ul id="leaderboard-list"></ul>
+    </div>
+
+    <script>
+        // Initialize streak data
+        const streaks = {
+            compliment: { name: "Compliment Da Queen", days: 7, progress: 0, lastPress: 0 },
+            call: { name: "CALL CALL CALL", days: 12, progress: 0, lastPress: 0 },
+            video: { name: "On Dat Vid", days: 3, progress: 0, lastPress: 0 },
+            communication: { name: "Communication Champion", days: 22, progress: 0, lastPress: 0 },
+        };
+
+        // Load progress from local storage
+        function loadProgress() {
+            const savedStreaks = JSON.parse(localStorage.getItem('streaks'));
+            if (savedStreaks) {
+                Object.assign(streaks, savedStreaks);
+                updateProgress('compliment');
+                updateProgress('call');
+                updateProgress('video');
+                updateProgress('communication');
+            }
+        }
+
+        // Save streak data to local storage
+        function saveProgress() {
+            localStorage.setItem('streaks', JSON.stringify(streaks));
+        }
+
+        // Update the progress bar for each streak
+        function updateProgress(streakName) {
+            const streak = streaks[streakName];
+            const progressBar = document.getElementById(`${streakName}-progress`);
+            const percentage = (streak.progress / streak.days) * 100;
+            progressBar.style.width = `${percentage}%`;
+
+            // Show completion alert when streak is completed
+            if (streak.progress >= streak.days) {
+                alert(`${streak.name} completed! 🎉 You win your prize!`);
+                addToLeaderboard(streakName);
+            }
+        }
+
+        // Add completed streak to the leaderboard
+        function addToLeaderboard(streakName) {
+            const leaderboardList = document.getElementById("leaderboard-list");
+            const newEntry = document.createElement("li");
+            newEntry.textContent = `${streakName}: ${streaks[streakName].progress} days completed ✅`;
+            leaderboardList.appendChild(newEntry);
+
+            // Show leaderboard if there are any completed streaks
+            document.getElementById("leaderboard").style.display = 'block';
+        }
+
+        // Check if the button can be pressed (24-hour cooldown)
+        function canPress(streakName) {
+            const lastPress = streaks[streakName].lastPress;
+            const currentTime = new Date().getTime();
+            const oneDayInMillis = 24 * 60 * 60 * 1000;
+            return (currentTime - lastPress) >= oneDayInMillis;
+        }
+
+        // Handle button press and update progress
+        function handlePress(streakName) {
+            if (!canPress(streakName)) {
+                alert("You can only press once every 24 hours! Please wait.");
+                return;
+            }
+            streaks[streakName].progress++;
+            streaks[streakName].lastPress = new Date().getTime();
+            updateProgress(streakName);
+            saveProgress();
+        }
+
+        // Event listeners for confirm buttons
+        document.getElementById('compliment-btn').addEventListener('click', function() {
+            handlePress('compliment');
+        });
+
+        document.getElementById('call-btn').addEventListener('click', function() {
+            handlePress('call');
+        });
+
+        document.getElementById('video-btn').addEventListener('click', function() {
+            handlePress('video');
+        });
+
+        document.getElementById('communication-btn').addEventListener('click', function() {
+            handlePress('communication');
+        });
+
+        // Load the streak data when the page is loaded
+        loadProgress();
+    </script>
+</body>
+</html>
